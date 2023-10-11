@@ -12,6 +12,7 @@ int main(void) {
     int N;
 
     while (scanf("%d", &N) != EOF) {
+        
         char codigos[N][5];  // Matriz para armazenar os códigos
 
         for (int i = 0; i < N; i++) {
