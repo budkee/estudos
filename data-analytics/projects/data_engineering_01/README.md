@@ -29,3 +29,4 @@ Após ter coletado os dados, seu armazenamento será feito em um bucket do [Amaz
 
 ### ETL | Python & Docker
 
+- [Configuração Docker]()
