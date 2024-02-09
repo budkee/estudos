@@ -1,10 +1,4 @@
-[submodule "analise_de_dados/projects/recomenda_livros"]
-	path = analise_de_dados/projects/recomenda_livros
-	url = https://github.com/budkee/recomenda_livros.git
-
 [submodule "analise_de_dados/projects/filmes_e_series"]
 	path = analise_de_dados/projects/filmes_e_series
 	url = https://github.com/budkee/filmes_e_series.git
-[submodule "analise_de_dados/projects/analise_de_dados/projects/recomenda_livros"]
-	path = analise_de_dados/projects/analise_de_dados/projects/recomenda_livros
-	url = https://github.com/budkee/recomenda_livros.git
+
