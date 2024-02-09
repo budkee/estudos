@@ -1,11 +1,10 @@
-[submodule "data-analytics/projects/data_science_01"]
-	path = data-analytics/projects/data_science_01
-	url = https://github.com/budkee/data_science_01.git
+[submodule "analise_de_dados/projects/recomenda_livros"]
+	path = analise_de_dados/projects/recomenda_livros
+	url = https://github.com/budkee/recomenda_livros.git
 
-[submodule "web/projects/budkee.github.io"]
-	path = web/projects/budkee.github.io
-	url = https://github.com/budkee/budkee.github.io.git
-
-[submodule "web/projects/dualink.github.io"]
-	path = web/projects/dualink.github.io
-	url = https://github.com/dualink/dualink.github.io.git
+[submodule "analise_de_dados/projects/filmes_e_series"]
+	path = analise_de_dados/projects/filmes_e_series
+	url = https://github.com/budkee/filmes_e_series.git
+[submodule "analise_de_dados/projects/analise_de_dados/projects/recomenda_livros"]
+	path = analise_de_dados/projects/analise_de_dados/projects/recomenda_livros
+	url = https://github.com/budkee/recomenda_livros.git
