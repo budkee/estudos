@@ -26,14 +26,10 @@
 
 ### Linguagens de programação
 
-  [![python](https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white)](https://roadmap.sh/python)
-  [![javascript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
-  [![c](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)](https://www.geeksforgeeks.org/c-programming-language/?ref=outind)
-  [![java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)](https://dev.java/learn/)
-  [![php](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/manual/pt_BR/)
+[![python](https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white)](https://roadmap.sh/python)[![javascript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)[![c](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)](https://www.geeksforgeeks.org/c-programming-language/?ref=outind)[![java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)](https://dev.java/learn/)
 
 
-## Projects | FullStack Dev
+## Projetos | FullStack Dev
 
 - [Projeto 1]()
 - [Projeto 2]()
@@ -47,11 +43,7 @@
 
 ## Certificados
 
-- [Certificado 1]()
-- [Certificado 2]()
-- [Certificado 3]()
-- [Certificado 4]()
-- [Certificado 5]()
+- ![]()
 
 ## Links e Referências
 
