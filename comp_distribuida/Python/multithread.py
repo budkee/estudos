@@ -22,7 +22,7 @@ def conectado(con, cliente):
 if __name__ == '__main__':
 
     # Configurar o host e a porta
-    host = '192.168.100.113' ## IP da sua máquina
+    host = '192.168.0.40' ## IP da sua máquina
     port = 7777 ## Acima de 5000
 
     # Criar um objeto socket
@@ -36,8 +36,8 @@ if __name__ == '__main__':
     print('Aguardando conexão do cliente...')
     
     # Aceitar a conexão do cliente
-    client_socket, client_address = server_socket.accept()
-    print('Conexão estabelecida com:', client_address)
+    #client_socket, client_address = server_socket.accept()
+    #print('Conexão estabelecida com:', client_address)
 
     while True:
 
@@ -49,4 +49,5 @@ if __name__ == '__main__':
         _thread.start_new_thread(conectado, tuple([con, cliente]))
 
     # Fecha o socket do servidor
-    servidor_socket.close()
+    server_socket.close()
+
