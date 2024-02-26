@@ -39,6 +39,7 @@ if __name__ == '__main__':
     #client_socket, client_address = server_socket.accept()
     #print('Conexão estabelecida com:', client_address)
 
+    # Loop principal
     while True:
 
         # Aceitando uma nova conexão
