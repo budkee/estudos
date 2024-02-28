@@ -2,7 +2,7 @@
 import socket
 
 # 1. Configurar o host e a porta
-host = '192.168.100.113' ## IP da máquina que deseja conectar
+host = '0.0.0.0' ## IP da máquina que deseja conectar
 port = 7777  ## Acima de 5000
 
 # 2. Criar um objeto socket
