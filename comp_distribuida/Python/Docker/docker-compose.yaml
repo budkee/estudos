@@ -1,0 +1,32 @@
+version: '3'
+services:
+  
+  cliente:
+    
+    build:
+      context: ./Client
+      dockerfile: Dockerfile
+    networks:
+      - mynetwork
+    depends_on:
+      - coordenador
+    volumes:
+      - ./Client:/Client
+    deploy:
+      replicas: 1
+
+  coordenador:
+
+    build: 
+      context: ./Coordenador
+      dockerfile: Dockerfile
+    
+    volumes:
+      - ./Coordenador:/Coordenador
+    networks:
+      - mynetwork
+
+    
+networks:
+
+  mynetwork:
