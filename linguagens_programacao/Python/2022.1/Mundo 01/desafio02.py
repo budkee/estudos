@@ -1,5 +1,0 @@
-print('\nFormatação da data de nascimento\n')
-dia = input('Dia: ')
-mes = input('Mês: ')
-ano = input('Ano: ')
-print('Data de nascimento: {}/{}/{} \n'.format(dia,mes,ano))

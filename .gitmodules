@@ -2,3 +2,6 @@
 	path = analise_de_dados/projects/filmes_e_series
 	url = https://github.com/budkee/filmes_e_series.git
 
+[submodule "comp_distribuida/trabalho_pratico_2024"]
+	path = comp_distribuida/trabalho_pratico_2024
+	url = https://github.com/budkee/credito_debito.git
