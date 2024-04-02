@@ -7,15 +7,15 @@ services:
     container_name: mysql_server
     environment:
       MYSQL_ROOT_PASSWORD: sirius
-      MYSQL_USER: user_lbd
-      MYSQL_PASSWORD: pass_lbd
+      MYSQL_USER: siriusb
+      MYSQL_PASSWORD: sirius
       MYSQL_DATABASE: default_schema
     ports:
       - 3310:3306
   
   phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    container_name: phpmyadmin_compose
+    image: phpmyadmin
+    container_name: pma_interface
     links:
       - mysql
     environment:
