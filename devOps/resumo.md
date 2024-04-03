@@ -9,8 +9,8 @@ Algumas das tecnologias e ferramentas comumente usadas para a implementação da
 | Categoria            | Tecnologias/Ferramentas                           |
 |----------------------|--------------------------------------------------|
 | **Controle de Versão**     | Git, GitHub, GitLab, Bitbucket               |
-| **Integração Contínua**    | Jenkins, GitLab CI/CD, CircleCI, Travis CI  |
-| **Entrega Contínua**       | Jenkins, GitLab CI/CD, CircleCI, Spinnaker   |
+| **Integração Contínua**    | Jenkins, GitLab CI/CD, CircleCI, Travis CI, GitHub Actions |
+| **Entrega Contínua**       | Jenkins, GitLab CI/CD, CircleCI, Spinnaker, GitHub Actions |
 | **Gerenciamento de Configuração** | Ansible, Puppet, Chef, Terraform, AWS CloudFormation |
 | **Contêineres e Orquestração** | Docker, Kubernetes, OpenShift, ECS (Elastic Container Service) |
 | **Monitoramento e Observabilidade** | Prometheus, Grafana, ELK Stack (Elasticsearch, Logstash, Kibana), New Relic |
@@ -19,7 +19,7 @@ Algumas das tecnologias e ferramentas comumente usadas para a implementação da
 | **Colaboração e Comunicação** | Slack, Microsoft Teams, Jira, Confluence |
 | **Testes Automatizados** | Selenium, JUnit, Mocha, Jest |
 | **Infraestrutura como Código** | Terraform, AWS CloudFormation, Azure Resource Manager |
-| **Cloud Providers** | AWS (Amazon Web Services), Azure (Microsoft), [![gcp](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)](https://googlecloudcheatsheet.withgoogle.com/) |
+| **Cloud Providers** | AWS (Amazon Web Services), Azure (Microsoft), Google Cloud Platform|
 | **Gerenciamento de Configuração de Banco de Dados** | Liquibase, Flyway, AWS Database Migration Service |
 | **Segurança e Compliance** | HashiCorp Vault, AWS IAM (Identity and Access Management) |
 | **Análise de Código e Qualidade** | SonarQube, ESLint, RuboCop |

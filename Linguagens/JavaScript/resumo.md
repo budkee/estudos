@@ -15,4 +15,6 @@ Se você deseja avançar seus estudos em JavaScript e começar a desenvolver apl
 2. Express.js: O Express.js é um framework de aplicação web para Node.js. Ele fornece uma maneira fácil de construir APIs e manipular requisições e respostas HTTP.
 3. MongoDB: Se você estiver trabalhando com bancos de dados, o MongoDB é uma opção popular para armazenar dados em formato de documentos. Ele é altamente escalável e fácil de usar em conjunto com o Node.js.
 
-Lembre-se de que é importante o estudo contínuo e a prática para aprimorar suas habilidades em JavaScript. Comece pelos sites recomendados e, à medida que se sentir mais confiante, explore o desenvolvimento de aplicações web utilizando servidores. Boa sorte em sua jornada de aprendizado!
+### Node.js
+
+Ao considerar a organização da sua aplicação, deve-se levar em conta o sistema de módulos do motor (node). Aqui, um arquivo representa um módulo.

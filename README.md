@@ -29,15 +29,16 @@
 [![python](https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white)](https://roadmap.sh/python)[![javascript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)[![c](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)](https://www.geeksforgeeks.org/c-programming-language/?ref=outind)[![java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)](https://dev.java/learn/)
 
 
-## Projetos | FullStack Dev
+## Projetos
+### FullStack
 
-- [Projeto 1]()
-- [Projeto 2]()
-- [Projeto 3]()
+- [Aurora modas: ateliê de costura e ajustes](https://github.com/budkee/e-commerce)
+- [Wild Rydes: Solicite seu passeio com um unicórnio de nossa frota](https://github.com/budkee/serverless-aws-site)
+- [EnquetApp: descubra, opine e compartilhe!](https://github.com/budkee/enquete)
 
-## Projects | Data Analyst/ Data Engineering
+### Cientista de Dados
 
-- [Projeto 1]()
+- [Análise de atores e seu faturamento diante d]()
 - [Projeto 2]()
 - [Projeto 3]()
 
