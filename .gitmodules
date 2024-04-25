@@ -5,6 +5,11 @@
 [submodule "comp_distribuida/trabalho_pratico_2024"]
 	path = comp_distribuida/trabalho_pratico_2024
 	url = https://github.com/budkee/credito_debito.git
+
 [submodule "disciplinas/tads/singleton/singleton_pattern"]
 	path = disciplinas/tads/singleton/singleton_pattern
-	url = git@github.com:budkee/singleton_pattern.git
+	url = https://github.com/budkee/singleton_pattern.git
+
+[submodule "disciplinas/tads/coleta_armazenamento_ddd"]
+	path = disciplinas/tads/coleta_armazenamento_ddd
+	url = https://github.com/budkee/coleta_armazenamento_ddd.git

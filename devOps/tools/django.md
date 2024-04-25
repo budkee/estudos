@@ -1,1 +1,0 @@
-- [Django Security](https://cheatsheetseries.owasp.org/cheatsheets/Django_REST_Framework_Cheat_Sheet.html)
