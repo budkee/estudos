@@ -1,7 +1,3 @@
-[submodule "analise_de_dados/projects/filmes_e_series"]
-	path = analise_de_dados/projects/filmes_e_series
-	url = https://github.com/budkee/filmes_e_series.git
-
 [submodule "comp_distribuida/trabalho_pratico_2024"]
 	path = comp_distribuida/trabalho_pratico_2024
 	url = https://github.com/budkee/credito_debito.git
@@ -10,6 +6,6 @@
 	path = disciplinas/tads/singleton/singleton_pattern
 	url = https://github.com/budkee/singleton_pattern.git
 
-[submodule "disciplinas/tads/coleta_armazenamento_ddd"]
-	path = disciplinas/tads/coleta_armazenamento_ddd
-	url = https://github.com/budkee/coleta_armazenamento_ddd.git
+[submodule "disciplinas/tads/open_weather_map/coleta_armazenamento_ddd"]
+	path = disciplinas/tads/open_weather_map/coleta_armazenamento_ddd
+	url = git@github.com:budkee/coleta_armazenamento_ddd
