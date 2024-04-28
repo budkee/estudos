@@ -11,4 +11,4 @@ COPY coleta_armazenamento_ddd/coleta_armazena.py .
 # Instale as dependências Python
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD ["python", "coleta_armazena.py", "--coord", "-20.45", "-54.56", "--out", "dados_coletados.json"]
+CMD ["python", "coleta_armazena.py", "--coord", "-20.45", "-54.56", "--out", "dados_coletados"]

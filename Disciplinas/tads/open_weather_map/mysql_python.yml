@@ -25,7 +25,7 @@ services:
     ports:
       - 8183:80
 
-  coleta_dados:
+  coleta_dados_armazena:
     build:
       context: .
       dockerfile: Dockerfile
