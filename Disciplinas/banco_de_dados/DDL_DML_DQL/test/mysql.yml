@@ -13,8 +13,6 @@ services:
       #MYSQL_DATABASE: default_schema
     ports:
       - 3306:3306
-    volumes:
-      - mysql_data:/var/lib/mysql
 
   phpmyadmin:
     image: phpmyadmin
@@ -28,6 +26,3 @@ services:
     restart: always
     ports:
       - 8080:80
-
-volumes:
-  mysql_data:
