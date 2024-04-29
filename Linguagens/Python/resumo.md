@@ -79,3 +79,4 @@ Agora você pode programar utilizando o ambiente virtual isolado, garantindo que
 - [Documentação | Python Org](https://docs.python.org/pt-br/3/)
 - [Roadmap | Dev Python](https://roadmap.sh/python)
 - [Documentação | Requests](https://requests.readthedocs.io/en/latest/user/install/)
+- [Pense em Python](./pense_em_python.pdf), 2ª edição, por Allen B. Downey (O’Reilly). Copyright 2016 Allen Downey, 978-1-4919-3936-9.

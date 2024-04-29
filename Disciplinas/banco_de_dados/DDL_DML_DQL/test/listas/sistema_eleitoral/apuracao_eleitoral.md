@@ -4,40 +4,54 @@
 
 ## DDL | Entidades e Atributos
 
-Localidade(_id_, nome)
+- zona_eleitoral(_num_: varchar(3), nome_cidade: varchar(50))
 
-Zona Eleitoral(_id_, nome, **localidade**)
-Seção(_id_, nome, **zona**)
+- secao(_num_: varchar(4), nome_secao: varchar(50), **num_zona**: varchar(3))
 
-Eleitor(_rg_, *titulo_eleitor*, data_nasc, nome, voto, **numero_localidade**, **numero_secao**, **numero_zona**)
+- zona_secao(**num_zona**: varchar(3), **num_secao**: varchar(4))
 
-Candidato(_numero_, nome, cargo, **partido**)
-Partido(_id_, nome)
+- eleitor(_rg_: varchar(11), *titulo_eleitor*: varchar(12), data_nasc: date, nome: varchar(36), **num_localidade**: int, **num_zona**: vachar(3), **num_secao**: varchar(4))
+
+- candidato(*num*: int, nome: varchar(36), cargo: varchar(50), **num_partido**: int)
+
+- voto(*id_votacao*: timestamp, **num_eleitor**: varchar(12), **num_candidato**: int)
+
+- partido(*num*: int, nome_partido: varchar(36))
 
 ### PKs
 
-PK(Localidade)= id
-PK(Zona Eleitoral)= id
-PK(Seção)= id
-PK(Eleitor)= rg, titulo_eleitor
-PK(Candidato)= rg
-PK(Partido)= id
+PK(zona_eleitoral)= num
+PK(secao)= num
+PK(zona_secao) = num_zona, num_secao
+PK(eleitor)= rg, titulo_eleitor
+PK(candidato)= num
+PK(voto) = id_votacao
+PK(partido)= num
 
 ### FKs
 
-FKzona_localidade(zona)= PK(localidade)
+FKnum_partido(candidato)= PK(partido)
 
-FKsecoes_zona(secoes)= PK(zona eleitoral)
+FKnum_localidade(eleitor)= PK(localidade)
+FKnum_zona(eleitor)= PK(zona_eleitoral)
+FKnum_secao(eleitor)= PK(secao)
 
-FKeleitor_localidade(eleitor)= PK(localidade)
-FKeleitor_zona(eleitor)= PK(zona eleitoral)
-FKeleitor_secoes(eleitor)= PK(secoes)
+FKnum_localidade(localidade_zona)= PK(localidade)
+FKnum_zona(localidade_zona)= PK(zona_eleitoral)
 
-FKcandidato_partido(candidato)= PK(partido)
+FKnum_zona(secao)= PK(zona_eleitoral)
+
+FKnum_eleitor(voto)= PK(eleitor)
+FKnum_candidato(voto)= PK(candidato)
+
+FKnum_localidade(zona_eleitoral)= PK(localidade)
+
+FKnum_zona(zona_secao)= PK(zona_eleitoral)
+FKnum_secao(zona_secao)= PK(secao)
 
 ## DML | Inserção de dados
 
-- [DUMP do Banco com os Dados](./mysql/sistema_eleitoral.sql)
+- [DUMP do Banco com os Dados | 1](./mysql/sistema_eleitoral.sql)
 
 ## DQL | Queries
 
@@ -45,8 +59,22 @@ FKcandidato_partido(candidato)= PK(partido)
 
 ## Dúvidas
 
-- Será que vai ser melhor eu criar uma tabela só pra armazenar os votos e os respectivos candidatos? Ou, no caso pelo voto ser secreto, o correto é criar essa entidade separada que isto já garante a confidencialidade parcial dos dados?
+- No caso, pelo voto ser secreto, o correto é criar essa entidade(voto) separada que isto já garante a confidencialidade parcial dos dados?
 
-- Ao reconhecer uma entidade fraca, como o banco de dados sabe (ou como eu demonstro) que ela é fraca?
+    Sim, desta forma você separa (a primeiro nível) os dados confidenciais do resultado da votação, apesar de que se for feito um letf join da tabela eleitor com a tabela voto, você consegue saber quem votou em quem.
 
+- Ao reconhecer uma entidade fraca, como o banco de dados sabe (ou como eu demonstro) que ela é fraca? O que implica uma entidade ser fraca ou não se o banco de dados não reconhece isso?
+
+- Ao declarar as chaves de uma tabela no MySQL, qual é a diferença entre marcar aquela coluna como UNIQUE, UNIQUE composta, PRIMARY composta ou como Índice?
+
+- Não é possível atribuir dados duplicados a uma coluna com restrição? 
+
+    INSERT INTO `secao` (`num`, `localidade`, `num_zona`) VALUES ('0004', 'EM FLAVIO COELHO DE ALMEIDA DERZI', '001')
+    
+    Mensagem do MySQL: Documentação
+
+    #1062 - Entrada '001' duplicada para a chave 'secao.num_zona'
+
+- 
+![dupli](../../img/duplicada_restricao.png)
 

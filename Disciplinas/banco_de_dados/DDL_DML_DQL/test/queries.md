@@ -12,8 +12,6 @@
 
 ## DQL | Queries
 
-### Regrinhas
-
 ### Ordem de execução das consultas SQL
 
 1. `FROM/JOIN`
