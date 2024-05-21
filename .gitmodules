@@ -9,3 +9,7 @@
 [submodule "disciplinas/tads/open_weather_map/coleta_armazenamento_ddd"]
 	path = disciplinas/tads/open_weather_map/coleta_armazenamento_ddd
 	url = git@github.com:budkee/coleta_armazenamento_ddd
+
+[submodule "disciplinas/banco_de_dados/trabalho_pratico/spotify_data_colect"]
+	path = disciplinas/banco_de_dados/trabalho_pratico/spotify_data_colect
+	url = git@github.com:budkee/spotify_data_colect.git
