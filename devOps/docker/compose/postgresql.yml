@@ -1,5 +1,5 @@
 # Stack de serviços postgresql + pgadmin4
-version: '3.1'
+# version: '3.1'
 services:
 
   postgresql:
@@ -8,18 +8,19 @@ services:
     image: postgres:latest
     restart: always
     environment:
-      POSTGRES_PASSWORD: gatinho_estrelar
+      POSTGRES_PASSWORD: 'pass'
+      TZ: 'America/Campo_Grande'
     ports:
-      - "5433:5432"
+      - "7777:5432"
   
   pgadmin:
 
     container_name: 'pgadmin4'
-    image: dpage/pgadmin4
+    image: dpage/pgadmin4:8.8
     environment:
       PGADMIN_DEFAULT_EMAIL: "kae.budke@gmail.com"
       PGADMIN_DEFAULT_PASSWORD: "gatinho_estrelar"
     ports:
-      - "8090:80"
+      - "7878:80"
     depends_on:
       - postgresql

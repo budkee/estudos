@@ -6,9 +6,9 @@
 	path = disciplinas/tads/singleton/singleton_pattern
 	url = https://github.com/budkee/singleton_pattern.git
 
-[submodule "disciplinas/tads/open_weather_map/coleta_armazenamento_ddd"]
-	path = disciplinas/tads/open_weather_map/coleta_armazenamento_ddd
-	url = git@github.com:budkee/coleta_armazenamento_ddd
+[submodule "disciplinas/tads/open_weather_map/news_on_weather"]
+	path = disciplinas/tads/open_weather_map/news_on_weather
+	url = git@github.com:budkee/news_on_weather
 
 [submodule "disciplinas/banco_de_dados/trabalho_pratico/spotify_data_colect"]
 	path = disciplinas/banco_de_dados/trabalho_pratico/spotify_data_colect
