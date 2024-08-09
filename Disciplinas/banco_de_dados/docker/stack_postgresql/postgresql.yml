@@ -11,7 +11,7 @@ services:
       POSTGRES_PASSWORD: gatinho_estrelar
       TZ: 'America/Campo_Grande'
     ports:
-      - "5433:5432"
+      - "7777:5432"
   
   pgadmin:
 
