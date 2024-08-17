@@ -3,8 +3,10 @@
 
 #define MAX 100
 
+// Encontra os dois maiores valores num vetor
 void dois_maiores(int n, int v[MAX], int *pr, int *seg) {
 
+    
     for (int i=0; i < n; i++) {
 
         if (v[i] > *pr) {
