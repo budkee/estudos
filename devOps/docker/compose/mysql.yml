@@ -1,5 +1,3 @@
-version: "3"
-
 # Stack de serviços mysql + interface web
 services:
   mysql:

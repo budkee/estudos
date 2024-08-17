@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   # --------------------- Django Framework Server ------------------
   api_server:
