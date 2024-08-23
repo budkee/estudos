@@ -182,3 +182,4 @@ arcturus_github
 # Arquivos grandes
 data-analytics/big-data/spark-3.5.0-bin-hadoop3.tgz
 aws/
+.env

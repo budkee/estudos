@@ -1,0 +1,27 @@
+# Stack de serviços postgresql + pgadmin4
+services:
+  postgresql:
+    container_name: db
+    image: postgres:latest
+    # build: ./postgresql
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - '5433:5432'
+    volumes:
+      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+
+
+  pgadmin:
+    container_name: gui_db
+    image: dpage/pgadmin4:8.8
+    env_file:
+      - .env
+    ports:
+      - '8090:80'
+    depends_on:
+      - postgresql
+
+volumes:
+  pgdata: 

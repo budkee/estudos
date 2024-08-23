@@ -1,0 +1,47 @@
+services:
+  django_gunicorn:
+    container_name: django_gunicorn
+    volumes:
+      - static:/static
+    env_file:
+      - .env
+    build: 
+      context: .
+    ports:
+      - "8000:8000"
+
+  nginx:
+    container_name: nginx
+    volumes:
+      - static:/static
+    build: ./nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - django_gunicorn
+  
+  # postgresql:
+  #   container_name: 'db'
+  #   restart: always
+  #   env_file:
+  #     - pg_service.conf
+  #   build: ./postgresql
+  #   ports:
+  #     - "5433:5432"
+  #   volumes:
+  #     - pgdata:/var/lib/postgresql/data/pdgata
+  #     - docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+  
+  # pgadmin:
+  #   container_name: 'gui_db'
+  #   image: dpage/pgadmin4:8.8
+  #   env_file:
+  #     - .env
+  #   ports:
+  #     - "8090:80"
+  #   depends_on:
+  #     - postgresql
+
+volumes:
+  static:
+  # pgdata:
