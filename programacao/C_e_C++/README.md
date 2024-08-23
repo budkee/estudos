@@ -1,6 +1,6 @@
 [![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)]()
 
-# Linguagem C
+# Linguagem C e C++
 
 ## Sumário
 
@@ -14,7 +14,7 @@
 
 ---
 
-## Setup
+### C
 
 Na sua máquina provavelmente terá um compilador pré-instalado. Basta compilar pela CLI:
 
@@ -30,6 +30,12 @@ Onde,
 - `-o`:
 - `main`: nome do executável
 - `-lm`: caso o import do math dê errado
+
+
+### C++
+
+    g++ -Wall -pedantic programa.cpp -o programa.out
+
 
 Em seguida, você deve executar na linha de comando o excutável criado da seguinte forma:
 

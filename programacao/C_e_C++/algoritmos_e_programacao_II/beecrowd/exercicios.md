@@ -3,7 +3,6 @@
 ## Exercícios 
 >
 > ## Sumário
-> 
 
 ## Python para C
 >
