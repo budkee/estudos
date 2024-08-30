@@ -132,6 +132,7 @@ void insere_lista(int *n, int S[MAX], int p)
     *n = *n + 1;
     sobe(*n, S, *n - 1);
 }
+
 // 2. Consulta da maior prioridade em S
 int consulta_maxima(int S[MAX])
 {
@@ -156,7 +157,8 @@ int extrai_max(int *n, int S[MAX])
         return maior;
     }
     else {
-        return ?
+        return INT_MIN
+    
     }
 }
 
