@@ -16,7 +16,7 @@ services:
   pgadmin:
 
     container_name: 'gui'
-    image: dpage/pgadmin4:8.10
+    image: dpage/pgadmin4:8.11
     environment:
       PGADMIN_DEFAULT_EMAIL: "kae.budke@gmail.com"
       PGADMIN_DEFAULT_PASSWORD: "gatinho_estrelar"
