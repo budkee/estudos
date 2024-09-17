@@ -1,11 +1,11 @@
 import os
-from PIL import Image
+# from PIL import Image
 
-# Função para renomear os arquivos .jpg
+# Função para renomear os arquivos .jpg, .png e .jpeg
 def custom_file_rename(filename, parent_folder_name, counter):
     name, ext = os.path.splitext(filename)
     
-    if ext.lower() == ".jpg":
+    if ext.lower() in (".jpg", ".png", ".jpeg"):
         # Cria o novo nome no formato: nome_da_pasta_00.jpg, nome_da_pasta_01.jpg...
         new_name = f"{parent_folder_name}_{counter:02}{ext}"
         return new_name
@@ -24,7 +24,7 @@ def rename_folder_and_files(root_folder, new_folder_name):
         print("Erro: Permissão negada ao tentar renomear a pasta.")
         return
 
-    # Contador para arquivos .jpg
+    # Contador para arquivos .jpg, .png e .jpeg
     counter = 0
 
     # Renomear arquivos e subpastas recursivamente
@@ -38,11 +38,12 @@ def rename_folder_and_files(root_folder, new_folder_name):
             new_file_name = custom_file_rename(filename, parent_folder_name, counter)  # Aplicar regra de renomeação
             new_file_path = os.path.join(dirpath, new_file_name)
 
-            # Só renomeia se o arquivo for .jpg
-            if filename.lower().endswith('.jpg'):
+            # Só renomeia se o arquivo for .jpg, .png ou .jpeg
+            if filename.lower().endswith(('.jpg', '.png', '.jpeg')):
                 os.rename(old_file_path, new_file_path)
                 counter += 1
                 print(f"Arquivo renomeado: {new_file_name}")
+
 
 # Função para verificar o tamanho dos arquivos
 def check_file_sizes(root_folder):
@@ -94,7 +95,7 @@ if __name__ == "__main__":
         choice = input("\nEscolha uma opção: ")
 
         if choice == '1':
-            root_folder = input("Digite o caminho completo da pasta atual: ")
+            root_folder = input("Digite o caminho completo da pasta de interesse: ")
             new_folder_name = input("Digite o novo nome da pasta: ")
             rename_folder_and_files(root_folder, new_folder_name)
 
