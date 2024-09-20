@@ -5,7 +5,7 @@
 # Alterar a mensagem conforme o que foi feito no dia 
 
 git add .
-git commit -m "Estrutura de dados - Árvores Binárias e Percursos | #01"
+git commit -m "Ajustes Repo"
 echo "\n"
 git push
 echo "\n"
