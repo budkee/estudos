@@ -183,3 +183,5 @@ arcturus_github
 data-analytics/big-data/spark-3.5.0-bin-hadoop3.tgz
 aws/
 .env
+./videos
+./yolov3.weights
