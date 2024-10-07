@@ -3,7 +3,7 @@ services:
 
   postgresql:
 
-    container_name: 'db'
+    container_name: 'db_espacial'
     image: postgres:latest
     restart: always
     environment:
@@ -15,7 +15,7 @@ services:
   
   pgadmin:
 
-    container_name: 'gui'
+    container_name: 'gui_sirius'
     image: dpage/pgadmin4:8.12
     environment:
       PGADMIN_DEFAULT_EMAIL: "kae.budke@gmail.com"

@@ -9,13 +9,13 @@ services:
       - .env
     ports:
       - '5433:5432'
-    volumes:
-      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+    # volumes:
+    #   - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
 
 
   pgadmin:
     container_name: gui_db
-    image: dpage/pgadmin4:8.8
+    image: dpage/pgadmin4:8.12
     env_file:
       - .env
     ports:
