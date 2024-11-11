@@ -5,7 +5,7 @@
 # Alterar a mensagem conforme o que foi feito no dia 
 
 git add .
-git commit -m "Organização Repo | 07/10/24"
+git commit -m "Aula de LBD - Segurança | 11/11/24"
 echo "\n"
 git push
 echo "\n"
