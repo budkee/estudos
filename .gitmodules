@@ -1,15 +1,34 @@
-[submodule "comp_distribuida/trabalho_pratico_2024"]
-	path = comp_distribuida/trabalho_pratico_2024
+# UFMS
+[submodule "ufms/banco_de_dados/trabalho_pratico/spotify_data_colect"]
+	path = ufms/banco_de_dados/trabalho_pratico/spotify_data_colect
+	url = git@github.com:budkee/spotify_data_colect.git
+
+[submodule "ufms/comp_distribuida/trabalho_pratico_2024"]
+	path = ufms/trabalho_pratico_2024
 	url = https://github.com/budkee/credito_debito.git
 
-[submodule "disciplinas/tads/singleton/singleton_pattern"]
-	path = disciplinas/tads/singleton/singleton_pattern
-	url = https://github.com/budkee/singleton_pattern.git
-
-[submodule "disciplinas/tads/open_weather_map/news_on_weather"]
-	path = disciplinas/tads/open_weather_map/news_on_weather
+[submodule "ufms/tads/open_weather_map/news_on_weather"]
+	path = ufms/tads/open_weather_map/news_on_weather
 	url = git@github.com:budkee/news_on_weather
 
-[submodule "disciplinas/banco_de_dados/trabalho_pratico/spotify_data_colect"]
-	path = disciplinas/banco_de_dados/trabalho_pratico/spotify_data_colect
-	url = git@github.com:budkee/spotify_data_colect.git
+[submodule "ufms/estrutura_de_dados/gestao_emergencias"]
+	path = ufms/estrutura_de_dados/gestao_emergencias
+	url = git@github.com:budkee/gestao_emergencias
+
+[submodule "ufms/estrutura_de_dados/gestao_inventarios"]
+	path = ufms/estrutura_de_dados/gestao_inventarios
+	url = git@github.com:budkee/gestao_inventarios
+
+[submodule "ufms/tads/singleton/singleton_pattern"]
+	path = ufms/tads/singleton/singleton_pattern
+	url = https://github.com/budkee/singleton_pattern.git
+
+# Teste
+
+[submodule "sass"]
+	path = sass
+	url = https://github.com/budkee/sass.git
+
+[submodule "angular/01_rent_houses"]
+	path = angular/01_rent_houses
+	url = https://github.com/budkee/angular.git
