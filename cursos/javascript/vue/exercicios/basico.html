@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Conceitos Básicos</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+    <script src="/js/vue.min.js"></script>
+</head>
+
+<!-- Corpo do HTML como Classe -->
+<body class="exercicio">
+    
+    <!-- Template Vue -->
+    <div id="app">
+        <h2>{{ titulo }}</h2>
+        
+        <p>Nome: {{ nome }}</p>
+        <p>Preço: R$ {{ preco }}</p>
+        <p>Desconto: {{ desconto }}</p>
+        <p>Horário local: {{ exibirHora() }}</p>
+        <p>Preço com Desconto: R$ {{ precoComDesconto }}</p>
+
+    </div>
+
+    <script>
+        // Instância do Vue
+        new Vue({
+            
+            // Elemento HTML onde o Vue será aplicado
+            el: '#app',
+            // Dados a serem exibidos no template
+            data: {
+                titulo: 'Usando Vue.js!',
+                nome: 'Armário',
+                preco: 20,
+                desconto: 0.20
+            },
+            // Métodos a serem invocados no template
+            methods: {
+                exibirHora: function() {
+                    return new Date().toLocaleString();
+                }
+            },
+            // Valores computados a serem exibidos no template
+            computed: {
+                precoComDesconto: function() {
+                    return this.preco * (1 - this.desconto);
+                }
+            }
+        });   
+    </script>
+
+</html>
