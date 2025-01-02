@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{ title }}</h1>
+        <div>
+            <input type="text" size=25 placeholder="Digite para gerar..." @input="onData" v-model="text">
+        </div>
+
+        <div v-if="text" class="output">
+            <img :src="newQRCode" alt="QR Code">
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                title: 'Gerador de QR Code',
+                text: 'https://aurora.budkee.me',
+                qrcode: new QRious({size: 200})
+            },
+            computed: {
+                newQRCode() {
+                    this.qrcode.value = this.text
+                    return this.qrcode.toDataURL()
+                }
+            },
+            methods: {
+                onData(event) {
+                    this.text = event.target.value
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

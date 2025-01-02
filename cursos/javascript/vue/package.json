@@ -1,0 +1,20 @@
+{
+	"name": "exercicios",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		
+		"exercicios": "browser-sync start --server --files '**/*'",
+		
+		"qrcode": "http-server ./qrcode -c-1",
+		"sales": "http-server ./sales -c-1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"http-server": "^14.1.1",
+		"browser-sync": "^2.26.14"
+	}
+}
