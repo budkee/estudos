@@ -1,0 +1,51 @@
+# ----------------- Stack Data Science -----------------
+services:
+
+  JupyterLab:
+
+    container_name: jupyter_lab
+    image: amazon/aws-glue-libs:glue_libs_4.0.0_image_01
+    volumes:
+      - ~/.aws:/home/glue_user/.aws
+      - $JUPYTER_WORKSPACE_LOCATION:/home/glue_user/workspace/jupyter_workspace/
+    ports:
+      - '8888:8888'
+    env_file:
+      - .env
+    depends_on:
+      - postgresql
+    command: /home/glue_user/jupyter/jupyter_start.sh
+    stdin_open: true
+    tty: true
+  
+  postgresql:
+
+    container_name: 'db'
+    image: postgres:latest
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./db/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  pgadmin:
+
+    container_name: 'gui_db'
+    image: dpage/pgadmin4:8.13
+    env_file:
+      - .env
+    ports:
+      - "8090:80"
+    depends_on:
+      - postgresql
+
+# --------------------- Volumes ------------------
+volumes:
+  postgresql:
