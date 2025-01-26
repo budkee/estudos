@@ -1,0 +1,6 @@
+/* Resetando o estilo padrão da aplicação */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

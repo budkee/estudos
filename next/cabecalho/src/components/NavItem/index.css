@@ -1,0 +1,18 @@
+.nav-item {
+    .nav-link {
+        text-decoration: none;
+        color: var(--M3-black, #000);
+        text-align: center;
+        font-family: Montserrat;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: var(--Headline-Small-Line-Height, 2rem); /* 200% */
+        letter-spacing: var(--Headline-Small-Tracking, 0rem); /* 0 */
+        transition: color 0.3s;
+
+        &.active, &:hover {
+            color: var(--M3-red, #C53137);
+        }
+    }
+}
