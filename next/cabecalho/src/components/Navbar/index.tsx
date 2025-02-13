@@ -23,8 +23,14 @@ export default function Navbar() {
   return (
     <header>
       <nav className="navbar">
-        <Link href="/" className="logo">
-          <Image src="/pdf.svg" alt="Logo PDF" width={54} height={40} />
+        <Link 
+          href="/" 
+          className="logo">
+          <Image 
+            src="/pdf.svg" 
+            alt="Logo PDF" 
+            width={54} 
+            height={40} />
           <p className="nome">
             <span className="primeira-palavra">Protagonistas</span> do Futuro
           </p>
