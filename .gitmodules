@@ -32,3 +32,7 @@
 [submodule "angular/01_rent_houses"]
 	path = angular/01_rent_houses
 	url = https://github.com/budkee/angular.git
+
+[submodule "ufms/uja/sii"]
+	path = ufms/uja/sii
+	url = git@github.com:budkee/sii.git

@@ -166,7 +166,7 @@ Agora você pode interagir com o **REPL do SBCL** e acessar os arquivos Lisp na 
 3️⃣ **Rodar um script Lisp dentro do contêiner:**  
 Se houver um arquivo `scripts/script.lisp`, execute:  
 ```sh
-docker compose exec sii sbcl --script "basededatos.lisp"
+docker compose exec sii sbcl --script "mercado.lisp"
 ```
 
 ou
