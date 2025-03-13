@@ -1,0 +1,30 @@
+# Stack de serviços mysql + interface web
+services:
+  
+  workspace:
+    image: 
+    container_name: data_service
+    env_file:
+      - .env
+    
+
+  mysql:
+
+    container_name: mysql_server
+    image: mysql:latest
+    env_file:
+      - .env
+    ports:
+      - 3310:3306
+  
+  phpmyadmin:
+  
+    container_name: pma_interface
+    image: phpmyadmin
+    links:
+      - mysql
+    env_file:
+      - .env
+    restart: always
+    ports:
+      - 8183:80

@@ -22,4 +22,4 @@ RUN sbcl --eval '(ql:quickload :quicklisp-slime-helper)' --quit
 WORKDIR /scripts
 
 # Comando padrão: iniciar um REPL do SBCL
-CMD ["sbcl"]
+# CMD ["sbcl"]

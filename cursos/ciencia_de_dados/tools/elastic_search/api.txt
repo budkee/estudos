@@ -1,0 +1,7 @@
+{
+  "id": "Y_NHlo0BlOZ-pXotnMeb",
+  "name": "Teste de Filmes",
+  "api_key": "y2F1G41nRXS7_At4q55krw",
+  "encoded": "WV9OSGxvMEJsT1otcFhvdG5NZWI6eTJGMUc0MW5SWFM3X0F0NHE1NWtydw==",
+  "beats_logstash_format": "Y_NHlo0BlOZ-pXotnMeb:y2F1G41nRXS7_At4q55krw"
+}

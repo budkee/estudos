@@ -1,23 +1,47 @@
 # Lisp on Docker
 
-Você pode criar um **Dockerfile** para configurar um ambiente de desenvolvimento com **SBCL** e **Quicklisp**. Aqui está um passo a passo para criar e executar um contêiner Docker rodando **Lisp**:
+Piensando en no utilizar las configuraciones de mi ordenador para ejecutar la lenguagen LISP, fue criado un **Dockerfile** para configuración de un ambiente de desenvolvimiento com **SBCL** e **Quicklisp**. 
 
-## Lisp on Container
+Para criar e ejecutar un contenedor Docker rodando **Lisp** usted tiene dos opciones:
 
-### 📌 1. Criar o `Dockerfile`
-Crie um arquivo chamado `Dockerfile` com o seguinte conteúdo:
+- [Lisp on Container](#lisp-con-contenedor)
+- [Lisp on Docker Compose](#lisp-con-docker-compose)
+
+Para que pueda ejecutar el código y testar los ejemplos en la carpeta `scripts`, en la raíz del proyecto, puedes optar por hacer de dos maneras:
+
+1. [Ejecutar un contenedor especificando el archivo.](#-3-ejecutar-un-script-lisp-en-el-contenedor)
+
+2. [Ejecutar una composición de dejála activa.](#)
+
+```bash
+docker compose up -d
+```
+
+Y después ejecute el script deseado por medio de:
+
+```bash
+docker compose exec lisp sbcl --script "/scripts/script.lisp"
+```
+
+---
+
+## Lisp con Contenedor
+
+### 📌 1. Crear el `Dockerfile`
+
+Cree un archivo llamado `Dockerfile` con el siguiente contenido:
 
 ```dockerfile
-# Usar imagem base do SBCL
+# Usar imagen base de Debian
 FROM debian:latest
 
-# Atualizar pacotes e instalar dependências
+# Actualizar paquetes e instalar dependencias
 RUN apt-get update && apt-get install -y \
     sbcl \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
-# Baixar e instalar Quicklisp
+# Descargar e instalar Quicklisp
 RUN curl -o /tmp/ql.lisp http://beta.quicklisp.org/quicklisp.lisp && \
     sbcl --no-sysinit --no-userinit --load /tmp/ql.lisp \
          --eval '(quicklisp-quickstart:install :path "~/.quicklisp")' \
@@ -28,56 +52,49 @@ RUN curl -o /tmp/ql.lisp http://beta.quicklisp.org/quicklisp.lisp && \
 # Instalar Quicklisp-Slime-Helper
 RUN sbcl --eval '(ql:quickload :quicklisp-slime-helper)' --quit
 
-# Definir o diretório de trabalho
+# Definir el directorio de trabajo
 WORKDIR /scripts
 
-# Comando padrão: iniciar um REPL do SBCL
-CMD ["sbcl"]
 ```
 
 ---
 
-### 📌 2. Criar e Executar o Contêiner
+### 📌 2. Crear y ejecutar el contenedor
 
-Agora, no mesmo diretório do `Dockerfile`, execute:
+En el mismo directorio del `Dockerfile`, ejecute:
 
-1. **Construir a imagem Docker:**
+1. **Construir la imagen Docker:**
+
    ```sh
    docker build -t sbcl-lisp .
    ```
 
-2. **Rodar um contêiner interativo com o Lisp REPL:**
+2. **Ejecutar un contenedor interactivo con el REPL de Lisp:**
    ```sh
-   docker run -it --rm sbcl-lisp
+   docker run -it --name debian-lisp --rm sbcl-lisp
    ```
 
-Isso abrirá um **REPL do SBCL** dentro do contêiner.
+Esto abrirá un **REPL de SBCL** dentro del contenedor y lo destruirá poco después.
 
 ---
 
-### 📌 3. Executar um Script Lisp pelo Contêiner
+### 📌 3. Ejecutar un script Lisp en el contenedor
 
-Se quiser rodar um **script Lisp** (por exemplo, `script.lisp`) dentro do contêiner:
+Para ejecutar un **script Lisp** (por ejemplo, `script.lisp`) dentro del contenedor:
 
-1. **Crie um arquivo** `script.lisp` com algum código, por exemplo:
-   ```lisp
-   (format t "Hello, Lisp in Docker!~%")
-   ```
+```sh
+docker run --rm -it -v "$(pwd)/scripts/script.lisp:/scripts/script.lisp" --name debian-lisp sbcl-lisp sbcl --script /scripts/script.lisp 
+```
 
-2. **Execute dentro do contêiner:**
-   ```sh
-   docker run --rm -v "$(pwd)/script.lisp:/scripts/script.lisp" sbcl-lisp sbcl --script /scripts/script.lisp
-   ```
-
-Isso monta o arquivo no contêiner e o executa.
-
-## Lisp on Docker Compose
-
-Se você quiser montar um volume para a pasta `scripts/` usando **Docker Compose**, pode fazer o seguinte:
+Esto monta el archivo en el contenedor y lo ejecuta.
 
 ---
 
-### 📌 1. Estrutura do Projeto  
+## Lisp con Docker Compose
+
+Para montar un volumen para la carpeta `scripts/` usando **Docker Compose**:
+
+### 📌 1. Estructura del proyecto
 
 ```
 /lisp
@@ -85,113 +102,84 @@ Se você quiser montar um volume para a pasta `scripts/` usando **Docker Compose
 │── Dockerfile
 └── scripts/
     ├── script.lisp
-    ├── outro_script.lisp
+    ├── otro_script.lisp
 ```
 
-- A pasta `scripts/` contém os arquivos Lisp que você quer acessar dentro do contêiner.
+La carpeta `scripts/` contiene los archivos Lisp que se accederán desde el contenedor.
 
 ---
 
-### 📌 2. Criar o `Dockerfile`  
+### 📌 2. Crear el `docker-compose.yml`
 
-Se você ainda não criou o `Dockerfile`, aqui está um modelo que configura **SBCL + Quicklisp**:
-
-```dockerfile
-# Usar imagem base do SBCL
-FROM debian:latest
-
-# Instalar dependências
-RUN apt-get update && apt-get install -y \
-    sbcl \
-    curl \
-    && rm -rf /var/lib/apt/lists/*
-
-# Baixar e instalar Quicklisp
-RUN curl -o /tmp/ql.lisp http://beta.quicklisp.org/quicklisp.lisp && \
-    sbcl --no-sysinit --no-userinit --load /tmp/ql.lisp \
-         --eval '(quicklisp-quickstart:install :path "~/.quicklisp")' \
-         --eval '(ql:add-to-init-file)' \
-         --quit && \
-    rm /tmp/ql.lisp
-
-# Instalar Quicklisp-Slime-Helper
-RUN sbcl --eval '(ql:quickload :quicklisp-slime-helper)' --quit
-
-# Definir diretório de trabalho
-WORKDIR /scripts
-
-# Comando padrão: iniciar um REPL do SBCL
-CMD ["sbcl"]
-```
-
----
-
-### 📌 3. Criar o `compose.yml`  
-
-Agora, crie um arquivo `compose.yml` na raiz do projeto:
+Cree el archivo `docker-compose.yml` en la raíz del proyecto, tenendo en cuenta el [**Dockerfile** anterior](#-1-crear-el-dockerfile):
 
 ```yaml
 services:
-  lisp:
+  sii:
+    container_name: lisp
     build: .
     volumes:
       - ./scripts:/scripts
     working_dir: /scripts
-    command: ["sbcl"]
+    # Mantém o container aberto
+    stdin_open: true 
+    # Habilita um terminal interativo
+    tty: true 
+    command: ["tail", "-f", "/dev/null"]
 ```
 
-Esse arquivo:
-- **Constrói a imagem** usando o `Dockerfile`.
-- **Monta a pasta `scripts/`** do host dentro do contêiner no diretório `/lisp`.
-- **Define o diretório de trabalho** como `/lisp`, então qualquer arquivo Lisp estará acessível dentro do contêiner.
-- **Inicia o SBCL** automaticamente.
+Este archivo:
+
+- **Construye la imagen** usando el `Dockerfile`.
+- **Monta la carpeta `scripts/`** del host dentro del contenedor en `/scripts`.
+- **Define el directorio de trabajo** como `/scripts`, haciendo accesibles los archivos Lisp.
+- **Inicia SBCL** automáticamente.
 
 ---
 
-### 📌 4. Executar o Contêiner  
+### 📌 3. Ejecutar el contenedor
 
-1️⃣ **Construir e iniciar o contêiner:**  
+1️⃣ **Construir e iniciar el contenedor:**
+
 ```sh
 docker compose up -d
 ```
-Isso cria o contêiner e o mantém rodando em segundo plano.
 
-2️⃣ **Acessar o SBCL dentro do contêiner:**  
+Esto crea el contenedor y lo mantiene en segundo plano.
+
+2️⃣ **Acceder al REPL de SBCL dentro del contenedor:**
+
 ```sh
 docker compose exec sii sbcl
 ```
 
-Agora você pode interagir com o **REPL do SBCL** e acessar os arquivos Lisp na pasta montada.
+Para salir digite:
 
-3️⃣ **Rodar um script Lisp dentro do contêiner:**  
-Se houver um arquivo `scripts/script.lisp`, execute:  
-```sh
-docker compose exec sii sbcl --script "mercado.lisp"
+```lisp
+(sb-ext:quit)
 ```
 
-ou
+3️⃣ **Ejecutar un script Lisp dentro del contenedor:**
 
 ```sh
-docker compose exec sii sbcl --noinform --load basededatos.lisp
+docker compose exec sii sbcl --script "/scripts/mercado.lisp"
 ```
 
-| Modo | Sai do SBCL? | Para quê usar? |
-| --- | --------- | ---- |
-| --script | ✅ Sim | Executar e sair automaticamente |
-| --noinform --load | ❌ Não | Carregar código e continuar no REPL | 
+o
 
-4️⃣ **Acessar um container gerenciado pelo Compose**
 ```sh
-docker compose exec sii sbcl
+docker compose exec sii sbcl --noinform --load "/scripts/mercado.lisp"
 ```
 
-5️⃣ **Executar um script dentro do `sbcl`**
-```sbcl
-(load "./test.lisp")
-```
+4️⃣ **Parar y eliminar los contenedores:**
 
-**Parar e remover os contêineres:**  
 ```sh
 docker compose down
 ```
 
+## Diferencias al utilizar `--script` o `--noinform --load`
+
+| Modo                | Sale del SBCL | Uso recomendado                      |
+| ------------------- | ------------- | ------------------------------------ |
+| `--script`          | ✅ Sí         | Ejecutar y salir automáticamente     |
+| `--noinform --load` | ❌ No         | Cargar código y continuar en el REPL |

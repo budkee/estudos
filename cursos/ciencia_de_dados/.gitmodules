@@ -1,0 +1,7 @@
+[submodule "filmes_series"]
+	path = ./jupyter_workspace/projetos/filmes_e_series
+	url = git@github.com:budkee/filmes_e_series.git
+
+[submodule "jupyter_workspace/projetos/compassuol"]
+	path = jupyter_workspace/projetos/compassuol
+	url = git@github.com:budkee/compassuol.git

@@ -1,0 +1,13 @@
+services:
+  prolog:
+    image: swipl
+    container_name: prolog
+    volumes:
+      - ./app:/usr/src/app
+    stdin_open: true
+    tty: true
+    working_dir: /usr/src/app
+
+
+# https://chatgpt.com/share/67bd79af-dd4c-8012-a216-336b252f7f8e
+# https://hub.docker.com/_/swipl
