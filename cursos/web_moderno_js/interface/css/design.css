@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'padrão';
+    src: url('AmaticSC-Regular.ttf') format('truetype');
+}
+body {
+   font-family: 'padrão'; 
+   font-size: 16px;
+   background-color: rgb(180, 151, 45);
+   color: #fff;
+}
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-content: flex-end;
+    justify-content: space-around;
+}
