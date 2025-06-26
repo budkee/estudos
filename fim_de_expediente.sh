@@ -3,11 +3,12 @@
 # Repositório no GitHub: https://github.com/budkee/estudos
 #
 # Alterar a mensagem conforme o que foi feito no dia 
-
+echo "\n # ============== Adding files ============== #"
 git add .
+echo "\n # ============== Commiting ============== #"
 git commit -m "Update Repo | 26/06/25"
-echo "\n # -------------- Push -------------- #"
+echo "\n # ============== Pushing ============== #"
 git push
-echo "\n"
+echo "\n # ============== Status ============== #"
 git status
 
