@@ -172,8 +172,9 @@ cython_debug/
 # VSCode
 .vscode/
 
-# Framework Bash
-.
+# Hadoop
+hadoop-3.3.6/
+hadoop-3.3.6.tar.gz
 
 # keys
 arcturus_github.pub
