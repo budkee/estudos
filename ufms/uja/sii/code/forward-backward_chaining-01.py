@@ -3,9 +3,24 @@ import copy
 
 class Predicate:
 
-    """Classe que representa um predicado com nome e argumentos.
+    """
+    Classe que representa um predicado com nome e argumentos.
     
-    Sobre: Um predicado é uma função que pode ser unificada com outros predicados para inferir novos fatos ou regras.
+        Sobre: 
+            Um predicado é uma função que pode ser unificada com outros predicados para inferir novos fatos ou regras.
+
+        Atributos:
+            name (str): O nome do predicado.
+            args (Tuple[str, ...]): Os argumentos do predicado, que podem ser variáveis ou constantes.
+        Métodos:
+            __init__(name, args): Inicializa o predicado com um nome e argumentos.
+            __repr__(): Retorna uma representação em string do predicado.
+            substitute(subs): Substitui variáveis nos argumentos do predicado por valores fornecidos.
+            is_variable(x): Verifica se um argumento é uma variável (começa com letra mininúscula).
+            unify(other): Tenta unificar este predicado com outro, retornando um dicionário de substituições ou None se não for possível unificar.
+            __eq__(other): Verifica se dois predicados são iguais.
+            __hash__(): Retorna o hash do predicado, permitindo que ele seja usado em conjuntos e dicionários.
+
     """
 
     def __init__(self, name: str, args: Tuple[str, ...]):
@@ -123,10 +138,10 @@ if __name__ == "__main__":
         Predicate("Pai", ("maria", "ana"))
     }
 
-    # Regras: Pai(x, y) ∧ Pai(y, z) → Avô(x, z)
+    # Regras: Pai(João, Alberto) ∧ Pai(Alberto, Pedro) → Avô(João, Pedro)
     rules = [
-        ([Predicate("Pai", ("x", "y"))], Predicate("Ancestral", ("x", "y"))),
-        ([Predicate("Pai", ("x", "y")), Predicate("Pai", ("y", "z"))], Predicate("Ancestral", ("x", "z")))
+        ([Predicate("Pai", ("joao", "alberto"))], Predicate("Ancestral", ("joao", "alberto"))),
+        ([Predicate("Pai", ("joao", "alberto")), Predicate("Pai", ("alberto", "pedro"))], Predicate("Ancestral", ("joao", "pedro")))
     ]
 
     # Encadeamento para frente
