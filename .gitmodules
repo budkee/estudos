@@ -23,7 +23,7 @@
 	path = ufms/tads/singleton/singleton_pattern
 	url = https://github.com/budkee/singleton_pattern.git
 
-# Teste
+# Estudos pessoais
 
 [submodule "sass"]
 	path = sass
@@ -33,3 +33,14 @@
 	path = angular/01_rent_houses
 	url = https://github.com/budkee/angular.git
 
+[submodule "devops/dev-ops-fundamentals"]
+	path = devops/dev-ops-fundamentals
+	url = https://gitlab.com/budkee.me/dev-ops-fundamentals.git
+
+[submodule "escritorio"]
+	path = escritorio
+	url = git@github.com:budkee/escritorio.git
+
+[submodule "django/enquete"]
+	path = django/enquete
+	url = git@github.com:budkee/enquete.git
