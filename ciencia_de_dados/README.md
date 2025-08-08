@@ -1,4 +1,6 @@
-# Engenharia de Dados
+# Central dos Dados 
+
+Hub de dados onde realizo estudos, testes ou projetos mais direcionados a dados.
 
 ## Análise Exploratória dos Dados
 
@@ -6,6 +8,33 @@
 2. [Coleta de Dados]
 3. [Análise]
 4. [Modelo]
+
+## Processos
+<img src="./img/transformacao-de-dados.png" width="90" align="right"/>
+
+Temos duas possibilidades de execução:
+
+<div style="display: flex; gap: 20px;">
+  <div style="flex: 1;">
+    <h3>ETL</h3>
+    <p>Conteúdo da primeira coluna.</p>
+    <ol>
+        <li><b>E</b>xtração</li>
+        <li><b>T</b>ransformação</li>
+        <li><b>C</b>arregamento</li>
+    </ol>
+  </div>
+  <div style="flex: 1;">
+    <h3>ELT</h3>
+    <p>Conteúdo da segunda coluna.</p>
+    <ol>
+        <li><b>E</b>xtração</li>
+        <li><b>C</b>arregamento</li>
+        <li><b>T</b>ransformação</li>
+    </ol>
+  </div>
+</div>
+
 
 ## Cursos em andamento
 

@@ -17,7 +17,8 @@
 *.ofx
 *.zip
 *.xlsx
-
+data/
+db/
 
 ### JupyterNotebooks ###
 # gitignore template for Jupyter Notebooks
