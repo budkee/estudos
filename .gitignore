@@ -187,3 +187,6 @@ aws/
 .env
 ./videos
 ./yolov3.weights
+
+# Chaves
+*.pem
