@@ -44,3 +44,4 @@
 [submodule "django/enquete"]
 	path = django/enquete
 	url = git@github.com:budkee/enquete.git
+
