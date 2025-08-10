@@ -45,3 +45,6 @@
 	path = django/enquete
 	url = git@github.com:budkee/enquete.git
 
+[submodule "devops/k8s"]
+	path = devops/k8s
+	url = git@github.com:budkee/k8s.git
