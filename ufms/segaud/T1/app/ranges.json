@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Welcome!",
+    "start": "0x0002A5D9",
+    "end": "0x0002A668",
+    "terminator": "FF"
+  },
+  {
+    "name": "Hooray!",
+    "start": "0x0002A76A",
+    "end": "0x0002A7E2",
+    "terminator": "FF"
+  }
+]
