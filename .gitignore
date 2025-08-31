@@ -190,3 +190,6 @@ aws/
 
 # Chaves
 *.pem
+
+# Zips
+*.zip
