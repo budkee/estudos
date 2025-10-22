@@ -7,7 +7,7 @@ echo "\n# ============== Adding files ============== #"
 git add .
 echo "\n# ============== Commiting ============== #"
 
-git commit -m "Trabalho SEGAUD #01 | 10/08/25"
+git commit -m "Organização repositório | 22/10/25"
 
 echo "\n# ============== Pushing ============== #"
 git push

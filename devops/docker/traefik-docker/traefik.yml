@@ -1,0 +1,12 @@
+# traefik.yml
+api:
+  dashboard: true
+  insecure: true # Habilita o dashboard em modo inseguro (apenas para lab)
+
+entryPoints:
+  web:
+    address: ":80"
+
+providers:
+  docker:
+    exposedByDefault: false # Boa prática: só expor contêineres com label explícito

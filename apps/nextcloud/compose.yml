@@ -1,0 +1,33 @@
+volumes:
+  cloud:
+  db:
+
+networks:
+  nextcloud:
+    ipam:
+      driver: bridge
+
+services:
+
+  db_cloud:
+    image: postgres:latest
+    restart: always
+    command: --transaction-isolation=READ-COMMITTED --log-bin=binlog --binlog-format=ROW
+    volumes:
+      - ./db:/var/lib/postgresql/data
+    env_file:
+      - .env
+
+  cloud:
+    image: nextcloud:latest
+    restart: always
+    ports:
+      - 8080:80
+    networks:
+      - nextcloud
+    volumes:
+      - ./cloud:/var/www/html
+    env_file:
+      - .env
+    depends_on:
+      - db_cloud
