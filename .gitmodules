@@ -38,9 +38,6 @@
 	path = django/enquete
 	url = git@github.com:budkee/enquete.git
 
-[submodule "devops/k8s"]
-	path = devops/k8s
-	url = git@github.com:budkee/k8s.git
 [submodule "ufms/comp_distribuida/Monitoria-Computa-ao-Distribuida"]
 	path = ufms/comp_distribuida/Monitoria-Computa-ao-Distribuida
 	url = git@github.com:Cruellest/Monitoria-Computa-ao-Distribuida.git

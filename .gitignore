@@ -193,3 +193,5 @@ aws/
 
 # Zips
 *.zip
+
+*.vdi
