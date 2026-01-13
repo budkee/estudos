@@ -15,6 +15,9 @@
 	path = ufms/estrutura_de_dados/gestao_inventarios
 	url = git@github.com:budkee/gestao_inventarios
 
+[submodule "ufms/segaud/esquenta_mario"]
+	path = ufms/segaud/esquenta_mario
+	url = git@github.com:budkee/hackeando_mario.git
 
 # Estudos pessoais
 
@@ -30,14 +33,11 @@
 	path = devops/dev-ops-fundamentals
 	url = https://gitlab.com/budkee.me/dev-ops-fundamentals.git
 
-[submodule "escritorio"]
-	path = escritorio
-	url = git@github.com:budkee/escritorio.git
-
-[submodule "django/enquete"]
-	path = django/enquete
+[submodule "backend/django/enquete"]
+	path = backend/django/enquete
 	url = git@github.com:budkee/enquete.git
 
 [submodule "ufms/comp_distribuida/Monitoria-Computa-ao-Distribuida"]
 	path = ufms/comp_distribuida/Monitoria-Computa-ao-Distribuida
 	url = git@github.com:Cruellest/Monitoria-Computa-ao-Distribuida.git
+
