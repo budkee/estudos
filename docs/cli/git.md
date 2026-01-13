@@ -1,10 +1,12 @@
 # Git
 
-Muito se fala dessa palavra Git, mas você sabe o que ela é e faz de fato? Hoje a gente vai falar um pouco mais sobre.
+O Git é uma ferramenta de versionamento de código onde é possível você realizar as alterações no seu código e salvá-las logo após o fechamento de um dia de trabalho, por exemplo. Uma cena que constantemente vemos em algumas máquinas de usuários que permeiam que escrevem com o Word instalado localmente é a seguinte:
 
-## O que é?
+![arquivo_final-arquivo_final(1)-arquivo_final(2)]()
 
-O Git é uma ferramenta de versionamento de código onde é possível você realizar as alterações no seu código e salvá-las logo após o fechamento de um dia de trabalho, por exemplo. Com poucos comandos você pode verificar como está o status do seu repositório - *git status* -, adicionar o estado dos arquivos alterados ao longo do tempo - *git add .* e enviar essas novas alterações no servidor(?) - *git commit -m "Sobre as alterações do dia"*.
+Após enviar uma versão ao revisor, o usuário realiza as alterações e salva o arquivo novamente para enviar. Entre os problemas de manter esse sistema, nota-se (i) um alto consumo da memória do hospedeiro, (ii) ...
+
+Com poucos comandos você pode verificar como está o status do seu repositório - *git status* -, adicionar o estado dos arquivos alterados ao longo do tempo - *git add .* e enviar essas novas alterações no servidor(?) - *git commit -m "Sobre as alterações do dia"*.
 
 ## Adicionando uma URL remota em um repositório local
 

@@ -1,4 +1,3 @@
-# 0. Imports
 import socket
 
 # 1. Configurar o host e a porta

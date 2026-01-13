@@ -2,7 +2,7 @@
 
 Entre na pasta do projeto contendo o compose.yml e, no terminal, execute o seguinte código:
 
-    docker-compose up --build
+    docker compose up --build
 
 # Conceitos
 

@@ -1,5 +1,5 @@
 import socket
-
+# Configuração do host
 # 1. Configurar o host e a porta
 host = '0.0.0.0' ## IP da sua máquina
 port = 7777 ## Acima de 5000
